@@ -1,5 +1,6 @@
+const storage = window.localStorage
+
 const renderContacts = () => {
-  const storage = window.localStorage
   const contacts = JSON.parse(storage.getItem('contacts'))
 
   let div = document.querySelector('.contact-list')
@@ -32,7 +33,6 @@ const renderContacts = () => {
 
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
   renderContacts()
 
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   addContactForm.addEventListener('submit', event => {
     event.preventDefault()
-    const storage = window.localStorage
 
     // NOTE: this is destructuring, assigning variable names to the corresponding elements
     const { name, email, phone, company, notes, twitter } = addContactForm.elements
@@ -55,9 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
       twitter: twitter.value,
     }
 
-    console.log(`Saving the following contact: ${JSON.stringify(contact)}`)
-    storage.setItem('contacts', JSON.stringify([contact]))
+    let contacts = JSON.parse(storage.getItem('contacts')) || []
+    contacts.push(contact)
+
+    // console.log(`Saving the following contact: ${JSON.stringify(contact)}`)
+    storage.setItem('contacts', JSON.stringify(contacts))
     renderContacts()
+    contactForm.reset()
   })
 
 })
