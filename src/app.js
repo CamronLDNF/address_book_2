@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   addContactForm.addEventListener('submit', event => {
     event.preventDefault()
+    const storage = window.localStorage
 
     const {    // NOTE: this is destructuring, assigning variable names to the corresponding elements
       name,
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     console.log(`Saving the following contact: ${JSON.stringify(contact)}`)
-  
+    storage.setItem('contacts', JSON.stringify([contact]))
   })
 
 })
