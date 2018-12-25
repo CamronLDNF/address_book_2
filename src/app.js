@@ -35,14 +35,13 @@ const renderContacts = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderContacts()
+  const contactForm = document.querySelector('.new-contact-form')
 
-  const addContactForm = document.querySelector('.new-contact-form')
-
-  addContactForm.addEventListener('submit', event => {
+  contactForm.addEventListener('submit', event => {
     event.preventDefault()
 
     // NOTE: this is destructuring, assigning variable names to the corresponding elements
-    const { name, email, phone, company, notes, twitter } = addContactForm.elements
+    const { name, email, phone, company, notes, twitter } = contactForm.elements
 
     const contact = {   // NOTE: and this creates a hash object, with key:value pairs
       id: Date.now(),
@@ -64,3 +63,4 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
 })
+

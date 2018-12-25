@@ -52,6 +52,10 @@ class AddressBookWorld {
     expect(actualContent).to.be.eq(null)
   }
 
+  async pageSleeps(seconds) {
+    await this.page.waitFor(seconds*1000);
+  }
+
   btnSelectorFromName(btnName) {
     switch (btnName) {
       case 'add contact':

@@ -27,3 +27,7 @@ Then('I should have {int} contacts in my address book', async function(contactCo
 Then('I should not see {string}', async function(content) {
   return await this.pageDoesNotHaveTextContent(content)
 })
+
+Then('I wait {int} seconds', async function (seconds) {
+  return await this.pageSleeps(seconds)
+});
