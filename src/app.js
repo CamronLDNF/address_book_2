@@ -13,16 +13,19 @@ const renderContacts = () => {
     contacts.forEach(contact => {
       let li = document.createElement('li')
       li.innerHTML = `
-        <div class ="card">
-          <div class="content">
-            <h1>${ contact.name }</h1>
-            <h2>${ contact.company }</h2>
-            <p>${ contact.notes }</p>
+        <div class ="card max-w-sm rounded overflow-hidden shadow-lg mt-5">
+          <div class="content px-6 py-4">
+            <p class="font-bold text-xl mb-2">${ contact.name }</h1>
+            <p class="text-grey-darker text-base font-semibold">${ contact.company }</h2>
+            <p class="text-grey-darker text-base">${ contact.notes }</p>
+          </div>
+          <div class="px-6 py-4">
             ${ contact.email } |
             <a href="https://www.twitter.com/${ contact.twitter}">@${contact.twitter}</a>
           </div>
         </div>
       `
+      ul.className = 'list-reset'; 
       ul.appendChild(li)
     })
 
