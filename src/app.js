@@ -13,13 +13,13 @@ const renderContacts = () => {
     contacts.forEach(contact => {
       let li = document.createElement('li')
       li.innerHTML = `
-        <div class ="card max-w-sm rounded overflow-hidden shadow-lg mt-5">
+        <div class ="card max-w-sm rounded overflow-hidden shadow-md mt-5">
           <div class="content px-6 py-4">
             <p class="font-bold text-xl mb-2">${ contact.name }</h1>
-            <p class="text-grey-darker text-base font-semibold">${ contact.company }</h2>
+            <p class="text-grey-darker text-base font-semibold mb-1">${ contact.company }</h2>
             <p class="text-grey-darker text-base">${ contact.notes }</p>
           </div>
-          <div class="px-6 py-4">
+          <div class="px-6 py-4 text-sm text-grey-darkest">
             ${ contact.email } |
             <a href="https://www.twitter.com/${ contact.twitter}">@${contact.twitter}</a>
           </div>
@@ -31,7 +31,7 @@ const renderContacts = () => {
 
     div.appendChild(ul)
   } else {
-    div.innerHTML = '<p>You have no contacts in your address book</p>'
+    div.innerHTML = '<p class="mt-5 italic text-grey-darker text-base font-normal">You have no contacts in your address book</p>'
   }
 
 }
