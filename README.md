@@ -10,7 +10,7 @@ The purpose of this challenge was to build an address book so that our fictional
 
 Built in HMTL, CSS, JavaScript
 Test enviroment: Cucumber, Yarn, Puppeteer, Chai
-Authors: Camron and Hanna
+
 ## Tech stack
 -------
 Languages & frameworks & tools used:
@@ -32,4 +32,4 @@ Acceptance testing:
 
 To test the app:
 * In your terminal / CLI, run `yarn run cucumber`
-*NOTE: due to browser timeout issue, you might have to run the test twice
+  * NOTE: due to browser timeout issue, you might have to run the test twice
